@@ -95,9 +95,6 @@ if (TARGET_LIKE_MSP430_GCC)
     set (ROUTER_QUEUE_LENGTH "5" CACHE STRING "Set maximum number of packets to be queued at the input of the router")
 endif()
 
-set (CSP_FREERTOS ON)
-set (CSP_ARCH "freertos")
-
 file (GLOB_RECURSE ARCH_FILES src/arch/${CSP_ARCH}/*.c)
 target_sources (csp PUBLIC ${ARCH_FILES})
 
