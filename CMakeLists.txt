@@ -19,6 +19,7 @@ option (IF_CAN "" OFF)
 option (IF_ZMQHUB "" OFF)
 option (CSP_DEBUG "" ON)
 option (CAN_SOCKETCAN "" OFF)
+option (UART "" ON)
 
 set (FREERTOS "" CACHE STRING "FreeRTOS root dir")
 option (INIT_SHUTDOWN "" OFF)
@@ -60,6 +61,7 @@ add_library (csp STATIC
              $<$<OR:$<BOOL:${HMAC}>,$<BOOL:${XTEA}>>:src/crypto/csp_sha1.c>
              $<$<BOOL:${XTEA}>:src/crypto/csp_xtea.c>
              $<$<BOOL:${CAN_SOCKETCAN}>:src/drivers/can/can_socketcan.c>
+             $<$<BOOL:${UART}>:src/drivers/usart/usart_freertos.c>
              src/interfaces/csp_if_lo.c
              src/rtable/csp_rtable_${RTABLE}.c
              $<$<BOOL:${RDP}>:src/transport/csp_rdp.c>

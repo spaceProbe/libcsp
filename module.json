@@ -11,7 +11,8 @@
   "license": "LGPL 2.1",
   "targetDependencies": {
     "freertos": {
-      "freertos": "openkosmosorg/freertos#~9.0.1"
+      "freertos": "openkosmosorg/freertos#~9.0.1",
+      "kubos-hal": "openkosmosorg/kubos-hal-stm32f4#~0.0.2"
     }
   }
 }
